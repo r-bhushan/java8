@@ -22,4 +22,8 @@ public class PersonBuilder {
                 JOHN, SAM, TOM
         };
     }
+
+    public static Person getSinglePerson(){
+        return JOHN;
+    }
 }

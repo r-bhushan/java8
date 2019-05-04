@@ -46,4 +46,6 @@ public class IntermediateOperationsWithJava7Comparison {
                 .forEach(person -> _logger.info(person.toString()));
         return this;
     }
+
+
 }
