@@ -5,7 +5,7 @@ public class ReduceOperation {
 
     }
     public ReduceOperation process(){
-        
+
         return this;
     }
 }

@@ -1,9 +1,17 @@
 package com.drclb.stream.intermediate;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
+/**
+ * Class to Sort a list of integers using {@link Stream#sorted()} method.
+ *
+ * Stream also exposes a {@link Stream#sorted(Comparator)}  method which accepts a comparator to facilitate
+ * complex objects sorting
+ */
 public class SortOperation {
     public static void main(String[] args) {
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 1, 5, 9, 6);

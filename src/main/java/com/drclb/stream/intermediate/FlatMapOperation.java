@@ -7,9 +7,14 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
 
 /**
- * FlatMap
+ * Class to combine multiple lists of person, coming from different sources of application modules
+ * into single list of Person Objects.
+ * {@link java.util.stream.Stream#flatMap(Function)}, accepts a function interface, which accepts any object
+ * of Type {@link java.util.stream.Stream} and returns extracts sub type (i.e Person, in our use case)
+ * from it to format a single.
  */
 public class FlatMapOperation {
     private static final Logger log = LoggerFactory.getLogger("FlatMapOperation ");
