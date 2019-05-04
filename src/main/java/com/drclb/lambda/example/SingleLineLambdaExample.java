@@ -5,6 +5,11 @@ import com.drclb.common.PersonBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * This class demonstrates a lambda expression for an Functional Interface having method {@link Print#out(Person)}
+ * required one argument.
+ * Also, demonstrate lambda expression in a single line
+ */
 public class SingleLineLambdaExample {
     private static final Logger log = LoggerFactory.getLogger("SingleLineLambdaExample");
 

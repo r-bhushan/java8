@@ -9,7 +9,15 @@ import java.util.List;
 import java.util.function.Predicate;
 
 /**
- * Predicate is a functional interface, takes one argument of type T and return a boolean value
+ * This class demonstrate the {@link Predicate} interface. This interface use to test/validate a condition.
+ * This interface has a method {@link Predicate#test(Object)} , which accepts one argument to evaluate under
+ * a condition
+ *
+ * It Differs from {@link java.util.function.Function} interface in sense that it always return boolean,
+ * which is not the case with {@link java.util.function.Function}
+ *
+ * Example Use Case: In this class, we have a list of person objects and want to know if a specific  person
+ * name is in list
  */
 public class PredicateExample {
     private static final Logger log = LoggerFactory.getLogger("PredicateExample");

@@ -1,5 +1,9 @@
 package com.drclb.common;
 
+/**
+ * This class represents a Data Model of Person entity, which being leveraged in the rest
+ * of the code examples.
+ */
 public class Person{
     String _name;
     String _location;

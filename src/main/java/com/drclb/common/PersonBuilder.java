@@ -3,6 +3,9 @@ package com.drclb.common;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class is utility class to create dummy person objects to be used in examples
+ */
 public class PersonBuilder {
 
     private static final Person JOHN = new Person("John", "canada");

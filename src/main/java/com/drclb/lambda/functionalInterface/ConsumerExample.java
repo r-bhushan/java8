@@ -9,28 +9,35 @@ import java.util.List;
 import java.util.function.Consumer;
 
 /**
- * {@link java.util.function.Consumer} represents an Operation consuming one argument
- * but returns nothing
+ * This class demonstrate usage of Consumer functional interface, whose method {@link Consumer#accept(Object)}
+ * accepts an argument of Type T but return nothing
+ * <p>
+ * Also, this has a default method {@link Consumer#andThen(Consumer)}, which accepts an argument of type
+ * Consumer, to build a chain of operations, before calling {@link Consumer#accept(Object)}
+ * <p>
+ * Example Use case: in this class, has a list of persons which wil go through 2 operations in chain.
+ * First - need to process by print command
+ * Second - After print command, need to persist
  */
 public class ConsumerExample {
     private static final Logger log = LoggerFactory.getLogger("ConsumerExample");
 
     public static void main(String[] args) {
-        Consumer<Person> personToPrint = person -> log.info("Triggering Printing Command for person["+person+"]");
-        Consumer<Person> personToPersistInDatabase = person -> log.info("Triggering persisting Command for person["+person+"]");
-        new ConsumerExample().processPersonWithConsumer(personToPrint,personToPersistInDatabase);
+        Consumer<Person> personToPrint = person -> log.info("Triggering Printing Command for person[" + person + "]");
+        Consumer<Person> personToPersistInDatabase = person -> log.info("Triggering persisting Command for person[" + person + "]");
+
+        new ConsumerExample().processPersonWithConsumer(personToPrint, personToPersistInDatabase);
 
     }
 
 
     public ConsumerExample processPersonWithConsumer(Consumer<Person> personPrintConsumer,
                                                      Consumer<Person> personPersistConsumer) {
-        List<Person> persons = PersonBuilder.getDummyPersonList();
-        Person personObjToOperate = persons.get(0);
+        Person person = PersonBuilder.getSinglePerson();
 
         personPrintConsumer
                 .andThen(personPersistConsumer)
-                .accept(personObjToOperate);
+                .accept(person);
 
         return this;
     }

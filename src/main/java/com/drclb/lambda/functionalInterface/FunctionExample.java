@@ -8,7 +8,13 @@ import org.slf4j.LoggerFactory;
 import java.util.function.Function;
 
 /**
- * Represents a function that accepts one argument and produces a result.
+ * This class demonstrate {@link Function} interface, which has a method {@link Function#apply(Object)}
+ * which accepts an argument of Type T and can return a different type.
+ *
+ * Example Use case: In this class we want to trigger a validation process on person object i.e
+ * if provided person name is "John1"
+ * and the said validation process must return the validation event result in boolean
+ *
  */
 public class FunctionExample {
     private static final Logger log = LoggerFactory.getLogger("FunctionExample");

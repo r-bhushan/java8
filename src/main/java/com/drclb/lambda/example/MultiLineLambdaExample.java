@@ -3,6 +3,9 @@ package com.drclb.lambda.example;
 import com.drclb.common.Person;
 import com.drclb.common.PersonBuilder;
 
+/**
+ * This class demonstrate multi line lambda expression for an Functional interface {@link Print#out(Person)}
+ */
 public class MultiLineLambdaExample {
     public static void main(String[] args) {
         Person person = PersonBuilder.getSinglePerson();
