@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.function.Consumer;
 
 /**
- * {@link java.util.function.Consumer} represents an operation consuming one argument
+ * {@link java.util.function.Consumer} represents an Operation consuming one argument
  * but returns nothing
  */
 public class ConsumerExample {

@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 import java.util.function.BinaryOperator;
 
 /**
- * Represents an operation on two arguments of tpe T and producing result of same type T
+ * Represents an Operation on two arguments of tpe T and producing result of same type T
  */
 public class BinaryOperatorExample {
     private static final Logger log = LoggerFactory.getLogger("BinaryOperatorExample");
