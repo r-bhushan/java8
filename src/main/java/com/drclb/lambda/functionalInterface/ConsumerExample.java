@@ -1,4 +1,4 @@
-package com.drclb.lambda.fnctionalInterface;
+package com.drclb.lambda.functionalInterface;
 
 import com.drclb.common.Person;
 import com.drclb.common.PersonBuilder;
@@ -13,11 +13,11 @@ import java.util.function.Consumer;
  * but returns nothing
  */
 public class ConsumerExample {
-    private static final Logger _logger = LoggerFactory.getLogger("ConsumerExample");
+    private static final Logger log = LoggerFactory.getLogger("ConsumerExample");
 
     public static void main(String[] args) {
-        Consumer<Person> personToPrint = person -> _logger.info("Triggering Printing Command for person["+person+"]");
-        Consumer<Person> personToPersistInDatabase = person -> _logger.info("Triggering persisting Command for person["+person+"]");
+        Consumer<Person> personToPrint = person -> log.info("Triggering Printing Command for person["+person+"]");
+        Consumer<Person> personToPersistInDatabase = person -> log.info("Triggering persisting Command for person["+person+"]");
         new ConsumerExample().processPersonWithConsumer(personToPrint,personToPersistInDatabase);
 
     }

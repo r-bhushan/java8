@@ -27,23 +27,23 @@ This class demonstrate most, if not all intermediate operations from {@link java
  Note: This class will demonstrate how its being done with previous version of java 8
  */
 public class IntermediateOperationsWithJava7Comparison {
-    private static final Logger _logger = LoggerFactory.getLogger("IntermediateOperationsWithJava7Comparison");
+    private static final Logger log = LoggerFactory.getLogger("IntermediateOperationsWithJava7Comparison");
     public static void main(String[] args) {
 
     }
 
     public IntermediateOperationsWithJava7Comparison utilizeFilterOperator(){
-        _logger.info("Demonstrating Filtering on dataStructure (java 8 vs 7.......");
+        log.info("Demonstrating Filtering on dataStructure (java 8 vs 7.......");
         // Java 7
         List<Person> persons = PersonBuilder.getDummyPersonList();
         for (Person person : persons) {
             if("John".equalsIgnoreCase(person.getName())) {
-                _logger.info(person.toString());
+                log.info(person.toString());
             }
         }
         // Java8
         persons.stream().filter(person -> "John".equalsIgnoreCase(person.getName()))
-                .forEach(person -> _logger.info(person.toString()));
+                .forEach(person -> log.info(person.toString()));
         return this;
     }
 

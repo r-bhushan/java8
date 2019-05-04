@@ -1,4 +1,4 @@
-package com.drclb.lambda.fnctionalInterface;
+package com.drclb.lambda.functionalInterface;
 
 import com.drclb.common.Person;
 import com.drclb.common.PersonBuilder;
@@ -11,16 +11,16 @@ import java.util.function.Function;
  * Represents a function that accepts one argument and produces a result.
  */
 public class FunctionExample {
-    private static final Logger _logger = LoggerFactory.getLogger("FunctionExample");
+    private static final Logger log = LoggerFactory.getLogger("FunctionExample");
 
     public static void main(String[] args) {
 
         Function<Person, Boolean> personExistsValidationFunction = person -> {
-            _logger.info("Person Validation function gets triggered.....");
+            log.info("Person Validation function gets triggered.....");
             return person.getName().equals("John1");
         };
 
-        _logger.info("Person eligible for persistence ? - "+
+        log.info("Person eligible for persistence ? - "+
                 personExistsValidationFunction.apply(PersonBuilder.getSinglePerson()));
     }
 

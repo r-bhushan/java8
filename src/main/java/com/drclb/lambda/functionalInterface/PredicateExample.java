@@ -1,4 +1,4 @@
-package com.drclb.lambda.fnctionalInterface;
+package com.drclb.lambda.functionalInterface;
 
 import com.drclb.common.Person;
 import com.drclb.common.PersonBuilder;
@@ -12,9 +12,9 @@ import java.util.function.Predicate;
  * Predicate is a functional interface, takes one argument of type T and return a boolean value
  */
 public class PredicateExample {
-    private static final Logger _logger = LoggerFactory.getLogger("PredicateExample");
+    private static final Logger log = LoggerFactory.getLogger("PredicateExample");
     public static void main(String[] args) {
-        _logger.info("Evaluating Predicate on list.....");
+        log.info("Evaluating Predicate on list.....");
         //test1
         Predicate<List<Person>> personExistPredicate = value -> value.contains("john");
         new PredicateExample().evaluatePersonPredicate(personExistPredicate, "john");
@@ -26,11 +26,11 @@ public class PredicateExample {
     public PredicateExample evaluatePersonPredicate(Predicate<List<Person>> predicate, String personFindPredicate){
 
         List<Person> persons = PersonBuilder.getDummyPersonList();
-        _logger.info("Existing Persons "+ persons);
+        log.info("Existing Persons "+ persons);
         if(predicate.test(persons))
-            _logger.info("Evaluation was successful and able to find the Person ["+personFindPredicate+"].....");
+            log.info("Evaluation was successful and able to find the Person ["+personFindPredicate+"].....");
         else
-            _logger.info("Evaluation was un-successful and not able to find the fruit ["+personFindPredicate+"].....");
+            log.info("Evaluation was un-successful and not able to find the fruit ["+personFindPredicate+"].....");
         return this;
     }
 }

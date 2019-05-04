@@ -10,20 +10,20 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class ConvertDataStructureToStreamAndViceVersa {
-    private static final Logger _logger = LoggerFactory.getLogger("ConvertDataStructureToStreamAndViceVersa");
+    private static final Logger log = LoggerFactory.getLogger("ConvertDataStructureToStreamAndViceVersa");
 
     public ConvertDataStructureToStreamAndViceVersa convertListToStream() {
-        _logger.info("Converting List of Persons to Stream and outputting.....");
+        log.info("Converting List of Persons to Stream and outputting.....");
         List<Person> persons = PersonBuilder.getDummyPersonList();
-        persons.stream().forEach(person -> _logger.info(person.toString()));
+        persons.stream().forEach(person -> log.info(person.toString()));
         return this;
     }
 
     public ConvertDataStructureToStreamAndViceVersa convertStreamToList(){
-        _logger.info("Converting Stream of Random numbers to List of Doubles and outputting.....");
+        log.info("Converting Stream of Random numbers to List of Doubles and outputting.....");
         List<Double> randomNumbers= Stream.generate(Math::random).limit(5)
                 .collect(Collectors.toList());
-        randomNumbers.forEach(number -> _logger.info(number.toString()));
+        randomNumbers.forEach(number -> log.info(number.toString()));
         return this;
     }
 

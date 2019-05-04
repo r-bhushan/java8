@@ -20,31 +20,31 @@ import static com.drclb.common.PersonBuilder.getPersonsAsArray;
  * {@link Stream#builder()}
  */
 public class CreationFunctions {
-    private static final Logger _logger = LoggerFactory.getLogger("Stream CreationFunctions");
+    private static final Logger log = LoggerFactory.getLogger("Stream CreationFunctions");
 
     public CreationFunctions createWithOF() {
-        _logger.info("Creating Stream with OF method using String....");
-        Stream.of("1", "2", "3").forEach(value -> _logger.info(value));
+        log.info("Creating Stream with OF method using String....");
+        Stream.of("1", "2", "3").forEach(value -> log.info(value));
 
-        _logger.info("Creating Stream with OF method using Array....");
-        Stream.of(getPersonsAsArray()).forEach(person -> _logger.info(person.toString()));
+        log.info("Creating Stream with OF method using Array....");
+        Stream.of(getPersonsAsArray()).forEach(person -> log.info(person.toString()));
         return this;
     }
 
     public CreationFunctions createByConcainating() {
-        _logger.info("Creating Stream by combining 2 streams into one.....");
+        log.info("Creating Stream by combining 2 streams into one.....");
         Stream<String> stringStream1 = Stream.of("4", "5", "6");
         Stream<String> stringStream2 = Stream.of("7", "8", "9");
-        Stream.concat(stringStream1, stringStream2).forEach(value -> _logger.info(value));
+        Stream.concat(stringStream1, stringStream2).forEach(value -> log.info(value));
         return this;
     }
 
     public CreationFunctions addValueToExistingStreamUsingBuilder(Person person) {
-        _logger.info("Creating Stream using builder function.....");
+        log.info("Creating Stream using builder function.....");
         Stream.Builder<Person> builder = Stream.builder();
         builder.add(new Person("Existing Person", "Ontario")).
                 add(person).build()
-                .forEach(p -> _logger.info(p.toString()));
+                .forEach(p -> log.info(p.toString()));
         return this;
     }
 
@@ -55,10 +55,10 @@ public class CreationFunctions {
      * @return
      */
     public CreationFunctions createByIterate() {
-        _logger.info("Creating Stream using iterate function........");
+        log.info("Creating Stream using iterate function........");
         Stream.iterate("2",  previousValue -> previousValue + 1)
                 .limit(10)
-                .forEach(value -> _logger.info(value));
+                .forEach(value -> log.info(value));
         return this;
     }
 

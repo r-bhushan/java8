@@ -1,4 +1,4 @@
-package com.drclb.lambda.fnctionalInterface;
+package com.drclb.lambda.functionalInterface;
 
 import com.drclb.common.Person;
 import org.apache.commons.lang3.StringUtils;
@@ -11,7 +11,7 @@ import java.util.function.Supplier;
  *
  */
 public class SupplierExample {
-    private static final Logger _logger = LoggerFactory.getLogger("SupplierExample");
+    private static final Logger log = LoggerFactory.getLogger("SupplierExample");
 
     public static void main(String[] args) {
         Supplier<String> defaultLocSupplier = () -> "Canada";
@@ -21,11 +21,11 @@ public class SupplierExample {
     }
 
     public SupplierExample persistPerson(Supplier<String> personDefaultLocationSuplier, Person person){
-        _logger.info("Per validating personp["+person+"] before persisting....");
+        log.info("Per validating personp["+person+"] before persisting....");
 
         if(StringUtils.isBlank(person.getLoc()))
             person = new Person(person.getName(), personDefaultLocationSuplier.get());
-        _logger.info("Persisting person" + person);
+        log.info("Persisting person" + person);
         return this;
     }
 }

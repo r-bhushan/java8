@@ -13,7 +13,7 @@ public class Person{
     public String getLoc(){
         return _location;
     }
-
+    public Person setLoc(String loc){_location = loc; return this;}
     @Override
     public String toString() {
         return "Person{" +
