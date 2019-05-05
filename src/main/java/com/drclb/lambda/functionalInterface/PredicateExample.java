@@ -1,3 +1,4 @@
+
 package com.drclb.lambda.functionalInterface;
 
 import com.drclb.common.Person;
@@ -38,7 +39,7 @@ public class PredicateExample {
         if(predicate.test(persons))
             log.info("Evaluation was successful and able to find the Person ["+personFindPredicate+"].....");
         else
-            log.info("Evaluation was un-successful and not able to find the fruit ["+personFindPredicate+"].....");
+            log.info("Evaluation was un-successful and not able to find the person ["+personFindPredicate+"].....");
         return this;
     }
 }
