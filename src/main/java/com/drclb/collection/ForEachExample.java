@@ -16,12 +16,10 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.drclb.foreach;
+package com.drclb.collection;
 
 import com.drclb.common.Person;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.function.Consumer;
 
 import static com.drclb.common.PersonBuilder.getDummyPersonList;
@@ -29,7 +27,7 @@ import static com.drclb.common.PersonBuilder.getDummyPersonList;
 /**
  * For each with List
  */
-public class ForEach {
+public class ForEachExample {
 
     public void iterateInJava7() {
         for (Person p : getDummyPersonList()) {
@@ -38,7 +36,7 @@ public class ForEach {
     }
 
     public void iterateInJava8() {
-        // For each accepts cnsumer, which is a functional interface. Consumer exc
+        // For each accepts consumer, which is a functional interface.
         getDummyPersonList().forEach(person -> System.out.println(person));
 
         // Example2: how to chain the multiple consumer in for each
@@ -58,7 +56,7 @@ public class ForEach {
     }
 
     public static void main(String[] args) {
-        new ForEach().iterateInJava8();
+        new ForEachExample().iterateInJava8();
     }
 
 
