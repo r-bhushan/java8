@@ -16,22 +16,32 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.drclb.stream.ternimal;
+package com.drclb.collection.map;
 
-import com.drclb.common.Person;
-import com.drclb.common.PersonBuilder;
+import org.apache.commons.lang3.StringUtils;
 
-import java.util.List;
+import java.util.*;
 
-public class ForeachOperation {
+/**
+ * Class demonstrate {@link java.util.Map#getOrDefault(Object, Object)} example.
+ *
+ * existing get method returns null in case key not found. This will lead to {@link NullPointerException}
+ *
+ *
+ * Example Use case: find the list of shoe based on brand name
+ */
+public class DefaultValueExample {
+
+    private static final String EMPTY_VALUE = StringUtils.EMPTY;
 
     public static void main(String[] args) {
-        List<Person> persons = PersonBuilder.getDummyPersonList();
-        new ForeachOperation().process(persons);
+        // represent brand and list of associated shoes
+        Map<String, List<String>>  shoeInventory = new HashMap<>(2);
+        shoeInventory.put("Nike", Arrays.asList("Nike-Shoe1", "Nike-Shoe2"));
+        shoeInventory.put("Rebook", Arrays.asList("Rebook-Shoe1", "Rebook-Shoe2"));
+
+        shoeInventory.getOrDefault("Aldo", new ArrayList<>());
+
     }
 
-    public ForeachOperation process(List<Person> personList){
-        personList.stream().forEach(person -> System.out.println(person));
-        return this;
-    }
 }

@@ -16,22 +16,15 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.drclb.stream.ternimal;
+package com.drclb.collection.comparator;
 
-import com.drclb.common.Person;
-import com.drclb.common.PersonBuilder;
+import com.drclb.collection.list.SortExample;
 
-import java.util.List;
+import java.util.Comparator;
 
-public class ForeachOperation {
-
-    public static void main(String[] args) {
-        List<Person> persons = PersonBuilder.getDummyPersonList();
-        new ForeachOperation().process(persons);
-    }
-
-    public ForeachOperation process(List<Person> personList){
-        personList.stream().forEach(person -> System.out.println(person));
-        return this;
-    }
+/**
+ * See {@link SortExample#orderJava8()} for {@link Comparator#naturalOrder()}
+ * and {@link Comparator#reverseOrder()} examples
+ */
+public class NaturalAndReverseOrder {
 }

@@ -16,22 +16,31 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.drclb.stream.ternimal;
+package com.drclb.lambda.functionalInterface;
 
 import com.drclb.common.Person;
-import com.drclb.common.PersonBuilder;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.BiConsumer;
 
-public class ForeachOperation {
+/**
+ * {@link java.util.function.BiConsumer} is similar to {@link java.util.function.Consumer} only dfference is
+ * {@link java.util.function.Consumer} accepts only one argument but {@link java.util.function.BiConsumer}
+ * accepts 2 arguments of different type.
+ * <p>
+ * Both Functional Interface returns nothing
+ */
+public class BiConsumerExample {
+
 
     public static void main(String[] args) {
-        List<Person> persons = PersonBuilder.getDummyPersonList();
-        new ForeachOperation().process(persons);
+        BiConsumer<Integer, String> applicationPolOperator = (applicationId, name) ->
+                System.out.println("Triggering process for application having id [" + applicationId + "], and name [" + name + "]");
+        Map<Integer, String> applicationPool = new HashMap<>(2);
+        applicationPool.put(1,"application1");
+        applicationPool.put(2,"application2");
+        applicationPool.forEach(applicationPolOperator);
     }
 
-    public ForeachOperation process(List<Person> personList){
-        personList.stream().forEach(person -> System.out.println(person));
-        return this;
-    }
 }

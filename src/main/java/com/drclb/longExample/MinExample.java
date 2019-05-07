@@ -16,22 +16,14 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.drclb.stream.ternimal;
+package com.drclb.longExample;
 
-import com.drclb.common.Person;
-import com.drclb.common.PersonBuilder;
-
-import java.util.List;
-
-public class ForeachOperation {
+/**
+ * Returns the smaller of two long values as if by calling Math.min.
+ */
+public class MinExample {
 
     public static void main(String[] args) {
-        List<Person> persons = PersonBuilder.getDummyPersonList();
-        new ForeachOperation().process(persons);
-    }
-
-    public ForeachOperation process(List<Person> personList){
-        personList.stream().forEach(person -> System.out.println(person));
-        return this;
+        System.out.println(Long.min(1,-2));
     }
 }

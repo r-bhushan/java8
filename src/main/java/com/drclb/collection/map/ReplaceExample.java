@@ -16,22 +16,30 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.drclb.stream.ternimal;
+package com.drclb.collection.map;
 
-import com.drclb.common.Person;
-import com.drclb.common.PersonBuilder;
+import java.util.HashMap;
+import java.util.Map;
 
-import java.util.List;
-
-public class ForeachOperation {
-
+/**
+ *
+ */
+public class ReplaceExample {
     public static void main(String[] args) {
-        List<Person> persons = PersonBuilder.getDummyPersonList();
-        new ForeachOperation().process(persons);
-    }
+        Map<Integer, String> colorOrder = new HashMap<>(2);
+        colorOrder.put(1, "red");
+        colorOrder.put(2, "green");
+        colorOrder.put(3, "blue");
+        colorOrder.put(4, "white");
 
-    public ForeachOperation process(List<Person> personList){
-        personList.stream().forEach(person -> System.out.println(person));
-        return this;
+        System.out.println("Replacing value for key 1 if its green, result is - " +
+                colorOrder.replace(1,"green", "brown"));
+
+
+        System.out.println("Replacing value for key 1 if its red, result is - " +
+                        colorOrder.replace(1,"red", "brown"));
+
+
+
     }
 }

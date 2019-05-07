@@ -16,22 +16,18 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.drclb.stream.ternimal;
+package com.drclb.collection.map;
 
-import com.drclb.common.Person;
-import com.drclb.common.PersonBuilder;
+import javax.annotation.Resources;
+import java.util.function.BiConsumer;
 
-import java.util.List;
-
-public class ForeachOperation {
-
-    public static void main(String[] args) {
-        List<Person> persons = PersonBuilder.getDummyPersonList();
-        new ForeachOperation().process(persons);
-    }
-
-    public ForeachOperation process(List<Person> personList){
-        personList.stream().forEach(person -> System.out.println(person));
-        return this;
-    }
+/**
+ * This class demonstrate example on how to use foreach with map.
+ *
+ * {@link java.util.Map#forEach(BiConsumer)}, accepts a {@link BiConsumer} functional interface, which is similar to consumer interface.
+ * Except it accepts 2 argument of different type and return nothing
+ *
+ * For Example @see {@link com.drclb.lambda.functionalInterface.BiConsumerExample}
+ */
+public class ForEachExample {
 }
