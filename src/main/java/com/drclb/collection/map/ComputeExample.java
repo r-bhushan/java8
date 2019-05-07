@@ -18,25 +18,5 @@
 
 package com.drclb.collection.map;
 
-import java.util.HashMap;
-import java.util.Map;
-
-/**
- *
- */
-public class ReplaceExample {
-    public static void main(String[] args) {
-        Map<Integer, String> colorOrder = new HashMap<>(2);
-        colorOrder.put(1, "red");
-        colorOrder.put(2, "green");
-        colorOrder.put(3, "blue");
-        colorOrder.put(4, "white");
-
-        System.out.println("Replacing value for key 1 if its green, result is - " +
-                colorOrder.replace(1, "green", "brown"));
-
-
-        System.out.println("Replacing value for key 1 if its red, result is - " +
-                colorOrder.replace(1, "red", "brown"));
-    }
+public class ComputeExample {
 }
