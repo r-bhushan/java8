@@ -1,6 +1,6 @@
 /*
  * This program illustrate the java 8 features for training purpose
- *     Copyright (c) 2019. Ravi Bhushan (ravi-bhushan@hotmail.com)
+ *     Copyright (c) 2019. Ravi Bhushan (ravi.a.bhushan@capgemini.com)
  *
  *     This program is free software: you can redistribute it and/or modify
  *     it under the terms of the GNU General Public License as published by
@@ -27,26 +27,25 @@ import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 
 /**
- * This class demonstrate the, {@link Map#compute(Object, BiFunction)}
- * <p>
- * Compute is used to modify the value in a lazy manner. Compute method gets the value using the provided key and
- * apply BiFunctional interface on it
+ * This class demonstrate the {@link java.util.Map#computeIfPresent(Object, BiFunction)}, its similar to compute only difference
+ * is in compute will throw {@link NullPointerException} in case key does not exist. In such case you can use {@link java.util.Map#computeIfPresent(Object, BiFunction)}
+ * to eliminate such exception
  */
-public class ComputeExample {
+public class ComputeIfPresentExample {
 
     public static void main(String[] args) {
         Map<String, List<Person>> persons = PersonBuilder.getDummyPersonList().stream()
                 .collect(Collectors.groupingBy(Person::getLoc));
-
-        System.out.println("Before Compute....");
-        System.out.println(persons);
-        // BiFunction  -
-        persons.compute("USA", (existingKey, existingValue) -> existingValue.stream()
-                .map(sr -> sr.setLoc(sr.getLoc().toLowerCase())).collect(Collectors.toList()));
-
-        System.out.println("After Compute......");
-        System.out.println(persons);
-
-
+        BiFunction<String, List<Person>, List<Person>> personModifierFunction = (existingKey, existingValue)
+                -> existingValue.stream().map(sr
+                -> sr.setLoc(sr.getLoc().toLowerCase())).collect(Collectors.toList());
+        try {
+            persons.compute("USA1",personModifierFunction );
+        } catch (NullPointerException ex) {
+            System.out.println("Throws Null Pointer exception.... Applying computeIfPresent");
+            persons.computeIfPresent("USA1",personModifierFunction);
+            System.out.println(persons);
+        }
     }
+
 }
