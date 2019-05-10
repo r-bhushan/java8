@@ -1,6 +1,6 @@
 /*
  * This program illustrate the java 8 features for training purpose
- *     Copyright (c) 2019. Ravi Bhushan (ravi.a.bhushan@capgemini.com)
+ *     Copyright (c) 2019. Ravi Bhushan (ravi-bhushan@hotmail.com)
  *
  *     This program is free software: you can redistribute it and/or modify
  *     it under the terms of the GNU General Public License as published by
