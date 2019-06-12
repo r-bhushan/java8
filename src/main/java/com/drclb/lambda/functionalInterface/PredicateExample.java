@@ -43,18 +43,20 @@ public class PredicateExample {
     public static void main(String[] args) {
         log.info("Evaluating Predicate on list.....");
         //test1
-        Predicate<List<Person>> personExistPredicate = value -> value.contains("john");
+        Predicate<Person> personExistPredicate = person -> person.getName().equalsIgnoreCase("john");
+
+
         new PredicateExample().evaluatePersonPredicate(personExistPredicate, "john");
         //test 2
-        Predicate<List<Person>> personExistPredicate2 = value -> value.contains("dumy user");
+        Predicate<Person> personExistPredicate2 = value -> value.getName().equalsIgnoreCase("dumy user");
         new PredicateExample().evaluatePersonPredicate(personExistPredicate2, "dumy user");
     }
 
-    public PredicateExample evaluatePersonPredicate(Predicate<List<Person>> predicate, String personFindPredicate){
+    public PredicateExample evaluatePersonPredicate(Predicate<Person> predicate, String personFindPredicate){
 
-        List<Person> persons = PersonBuilder.getDummyPersonList();
-        log.info("Existing Persons "+ persons);
-        if(predicate.test(persons))
+        Person person = PersonBuilder.getSinglePerson();
+        log.info("Existing Persons "+ person);
+        if(predicate.test(person))
             log.info("Evaluation was successful and able to find the Person ["+personFindPredicate+"].....");
         else
             log.info("Evaluation was un-successful and not able to find the person ["+personFindPredicate+"].....");

@@ -45,7 +45,14 @@ public class ConsumerExample {
         Consumer<Person> personToPersistInDatabase = person -> log.info("Triggering persisting Command for person[" + person + "]");
 
         new ConsumerExample().processPersonWithConsumer(personToPrint, personToPersistInDatabase);
+//        new ConsumerExample().processSingleConsumer(personToPrint);
+    }
 
+    public ConsumerExample processSingleConsumer(Consumer<Person> personPrintConsumer){
+        Person person = PersonBuilder.getSinglePerson();
+        personPrintConsumer
+                .accept(person);
+        return this;
     }
 
 

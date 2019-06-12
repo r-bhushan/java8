@@ -46,7 +46,7 @@ public class SupplierExample {
     }
 
     public SupplierExample persistPerson(Supplier<String> personDefaultLocationSuplier, Person person){
-        log.info("Per validating personp["+person+"] before persisting....");
+        log.info("Per validating person["+person+"] before persisting....");
 
         if(StringUtils.isBlank(person.getLoc()))
             person = new Person(person.getName(), personDefaultLocationSuplier.get());
