@@ -12,5 +12,4 @@ List of Features in Java 8
 
 
 Stream
-
-![image](https://user-images.githubusercontent.com/31322235/59392363-6186e100-8d45-11e9-8c5e-477f1f0607fa.png)
+![image](https://user-images.githubusercontent.com/31322235/59392832-1c63ae80-8d47-11e9-9b35-e434cbb5f57f.png)
